@@ -1,19 +1,29 @@
 <script setup>
+
+import {capitalize} from '@/main.js'
+
 defineProps({
   msg: {
     type: String,
     required: true,
   },
 })
+
+
+function consolePrint(event) {
+  const str = capitalize('hello')
+  alert(str);
+}
 </script>
 
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      You’ve successfully created a project with
+      You’ve successfully created a project with testing
       <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
+      <button label="testbutton" @click="consolePrint"> testbutton</button>
     </h3>
   </div>
 </template>
@@ -36,6 +46,7 @@ h3 {
 }
 
 @media (min-width: 1024px) {
+
   .greetings h1,
   .greetings h3 {
     text-align: left;
